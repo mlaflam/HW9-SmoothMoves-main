@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bynkbqrwken26"]
+[gd_scene load_steps=6 format=3 uid="uid://2hmv7yasa5ef"]
 
 [ext_resource type="Script" path="res://Scripts/DeadlyArea.gd" id="1_6t8ew"]
 [ext_resource type="Script" path="res://Scripts/MoveCharacter.gd" id="1_bnc3r"]
@@ -69,6 +69,7 @@ polygon = PackedVector2Array(63.68, 88, 447.68, 32, 375.68, 128, -0.320007, 176)
 
 [node name="Area2D2" type="Area2D" parent="."]
 position = Vector2(603, -48)
+monitoring = false
 script = ExtResource("3_ayj3k")
 
 [node name="Polygon2D" type="Polygon2D" parent="Area2D2"]
@@ -80,6 +81,7 @@ polygon = PackedVector2Array(-48, -25, 67, -23, 65, 121, -2, 120)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(584, 198)
+monitoring = false
 script = ExtResource("3_ayj3k")
 
 [node name="Polygon2D" type="Polygon2D" parent="Area2D"]
