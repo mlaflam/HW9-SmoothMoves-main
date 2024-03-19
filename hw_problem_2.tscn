@@ -18,7 +18,7 @@ script = ExtResource("1_bnc3r")
 jump_height = 3000.0
 movement_speed = 100.0
 horizontal_air_coefficient = 0.3
-speed_limit = 400.0
+speed_limit = 500.0
 friction = 0.2
 
 [node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
