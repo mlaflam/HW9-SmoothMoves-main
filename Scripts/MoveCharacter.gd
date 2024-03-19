@@ -1,5 +1,5 @@
 extends CharacterBody2D
-var gravity : Vector2
+var gravity : Vector2 
 @export var jump_height : float ## How high should they jump?
 @export var movement_speed : float ## How fast can they move?
 @export var horizontal_air_coefficient : float ## Should the player move more slowly left and right in the air? Set to zero for no movement, 1 for the same
@@ -7,23 +7,38 @@ var gravity : Vector2
 @export var friction : float ## What friction should they experience on the ground?
 
 # Called when the node enters the scene tree for the first time.
+# This function sets the initial gravity
 func _ready():
-	gravity = Vector2(0, 100)
+	gravity = Vector2(0, 100)  # Gravity is 0 in x and 100 in y direction
 	pass # Replace with function body.
 
 
 func _get_input():
+	
+	 # if the Character is on the "floor" or has ended motion
 	if is_on_floor():
+		
+		# if moving left then add negative of the movement speed to the velocity in the x direction 
+		# negative changes of velocity in the x direction indicate leftward movement
 		if Input.is_action_pressed("move_left"):
 			velocity += Vector2(-movement_speed,0)
 
+		# if moving right then add positive of the movement speed to the velocity in the x direction 
+		# positive changes of velocity in the x direction indicate rigthward movement
 		if Input.is_action_pressed("move_right"):
 			velocity += Vector2(movement_speed,0)
-
+		
+		# if jumping then add positive of the movement speed to the velocity in the y direction 
+		# positive changes of velocity in the y direction indicate upward movement
+		# also change velocity in x direction to 1 ?
 		if Input.is_action_just_pressed("jump"): # Jump only happens when we're on the floor (unless we want a double jump, but we won't use that here)
 			velocity += Vector2(1,-jump_height)
-
+	
+	# if the Character is NOT on the "floor" or has NOT ended motion
 	if not is_on_floor():
+		# if moving left then add negative of the movement speed to the velocity in the x direction 
+		# negative changes of velocity in the x direction indicate leftward movement
+		# this is multipied by the horizontal_air_coefficient which lessens x movement in the air
 		if Input.is_action_pressed("move_left"):
 			velocity += Vector2(-movement_speed * horizontal_air_coefficient,0)
 

@@ -15,7 +15,7 @@ script = ExtResource("1_6t8ew")
 position = Vector2(204, 286)
 floor_snap_length = 8.1
 script = ExtResource("1_bnc3r")
-jump_height = 2000.0
+jump_height = 3000.0
 movement_speed = 100.0
 horizontal_air_coefficient = 0.3
 speed_limit = 400.0
@@ -69,7 +69,6 @@ polygon = PackedVector2Array(63.68, 88, 447.68, 32, 375.68, 128, -0.320007, 176)
 
 [node name="Area2D2" type="Area2D" parent="."]
 position = Vector2(603, -48)
-monitoring = false
 script = ExtResource("3_ayj3k")
 
 [node name="Polygon2D" type="Polygon2D" parent="Area2D2"]
@@ -81,7 +80,6 @@ polygon = PackedVector2Array(-48, -25, 67, -23, 65, 121, -2, 120)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(584, 198)
-monitoring = false
 script = ExtResource("3_ayj3k")
 
 [node name="Polygon2D" type="Polygon2D" parent="Area2D"]
